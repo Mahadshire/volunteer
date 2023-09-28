@@ -4,6 +4,29 @@
 * Tempalte URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
+
+
+<style>
+
+  #show{
+    width: 150px;
+    height: 150px;
+    border: solid 1px #744547;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+  }
+  /* #show{
+        width: 150px;
+        height: 150px;
+        border: 1px solid #744547;
+        border-radius: 50% ;
+        object-fit: cover;
+    } */
+
+</style>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,15 +43,15 @@
 
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="Website/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Websitecss/animate.min.css">
+  <link rel="stylesheet" href="Websitecss/owl.carousel.min.css">
+  <link rel="stylesheet" href="Websitecss/owl.theme.default.min.css">
+  <link rel="stylesheet" href="Websitecss/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="Website/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="Website/fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="Website/css/aos.css">
+  <link rel="stylesheet" href="Website/css/style.css">
 
   <title>Learner Free Bootstrap Template by Untree.co</title>
 </head>
@@ -118,64 +141,128 @@
     <div class="container">
 
       <div class="row mb-5 justify-content-center">
-        <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
-          <form class="form-box">
+        <div class="col-lg-8 mx-auto order-1" data-aos="fade-up" data-aos-delay="500">
+          <form class="form-box" id="employeeform">
             <input type="hidden" name="update_id" id="update_id">
             <div class="row">
-              <div class="col-12 mb-3">
-                <!-- <input type="text" class="form-control" placeholder="Full name"> -->
+
+            <div class="col-sm-12">
+                                    <div class="alert alert-success d-none" role="alert">
+            This is a success alert—check it out!
+            </div>
+            <div class="alert alert-danger d-none" role="alert">
+            This is a danger alert—check it out!
+            </div>
+                        </div>
+
+            
+              <div class="col-6 mb-3">
+              <label for="">fullname</label>
+
+                <input type="text" class="form-control" name="fullname" id="fullname"  placeholder="Full name">
               </div>
-              <div class="col-12 mb-3">
-                <!-- <input type="text" class="form-control" placeholder="Full name"> -->
-              </div>
-              <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Full name">
-              </div>
-              <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Email">
-              </div>
+
+
+              <div class="col-6 mb-3">
+              <div class="form-group">
+                <label for="">sex</label>
+
+                <select name="sex" id="sex" class="form-control" >
+                <option disabled selected value>Select sex</option>
+                <!-- <option value="">select sex</option> -->
+                <option value="male">male</option>
+                <option value="female">female</option>
+               
+                </select>
+                </div>             
+               </div>
               
-              <div class="col-12 mb-3">
-                <input type="password" class="form-control" placeholder="Password">
+              <div class="col-6 mb-3">
+              <div class="form-group">
+                <label for="">phone</label>
+
+                <input type="number" name="phone" id="phone" class="form-control" placeholder="phone" >
+                </div>
               </div>
-              <div class="col-12 mb-3">
-                <input type="number" name="phone" id="phone" class="form-control p-2" placeholder="phone" required>
-              </div>
-              <div class="col-12 mb-3">
-                <input type="text" name="age" id="age" class="form-control p-2" placeholder="age" required>
-              </div>
-              <div class="col-12 mb-3">
-                <select name="gender" id="gender" class="form-control">
-                  <option value selected>select gender</option>
-                  <option value="male">male</option>
-                  <option value="female">female</option>
-                 </select>
-              </div>
-              <div class="col-12 mb-3">
-                <select name="education" id="education" class="form-control p-2" required>
+
+              <div class="col-6 mb-3">
+              <div class="form-group">
+                                  <label for="">age</label>
+
+                <input type="text" name="age" id="age" class="form-control" placeholder="age" >
+                </div>              </div>
+              <div class="col-6 mb-3">
+              <div class="form-group">
+                <label for="">education</label>
+
+                <select name="education" id="education" class="form-control" >
                 <option disabled selected value>Select education level</option>
+                <!-- <option value="secondery">select education level</option> -->
                 <option value="secondery">secondery</option>
                 <option value="primery">primery</option>
                 <option value="university">university</option>
                 </select>
-              </div>
+                </div>              </div>
+
+              <div class="col-6 mb-3">
+              <div class="form-group">
+                <label for="">branch</label>
+
+                <select name="branch_id" id="branch_id" class="form-control">
+                <option disabled selected value>Select branch</option>
+                <!-- <option value="0">select branch</option> -->
+                </select>
+                </div>              </div>
+
+
+          
               <div class="col-12 mb-3">
-                <select name="branch_id" id="branch_id" class="form-control  p-2" required>
-                  <option disabled selected value>Select branch</option>
-                  </select>
+
+              <div class="form-group">
+                <label for="">method</label>
+                <select name="method" id="method" class="form-control">
+                <option disabled selected value>who registed?</option>
+                <option value="by_user">by user</option>
+                <option value="by_self">by self</option>
+                </select>
+                </div>
+            
+              </div>
+          
+              <div class="col-12 mb-3">
+
+              <div class="form-group">
+                <label for="">image</label>
+                <input type="file" name="image" id="image" class="form-control" required>
+                </div>
+            
               </div>
 
-              <div class="col-12 mb-3">
-                <label class="control control--checkbox">
-                  <span class="caption">Accept our <a href="#">terms and conditions</a></span>
-                  <input type="checkbox" checked="checked" />
-                  <div class="control__indicator"></div>
-                </label>
-              </div>
 
-              <div class="col-12">
-                <input type="submit" value="Send Message" class="btn btn-primary">
-              </div>
+              <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                <img id="show">
+                </div>
+            </div>
+        </div>
+            
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit"  name="insert" class="btn btn-primary">Save Info</button>
+      </div>
+
+
+<!-- 
+      <div class="col-sm-12">
+                                    <div class="alert alert-success d-none" role="alert">
+            This is a success alert—check it out!
+            </div>
+            <div class="alert alert-danger d-none" role="alert">
+            This is a danger alert—check it out!
+            </div>
+                        </div> -->
             </div>
           </form>
         </div>
@@ -252,17 +339,22 @@
       </div>
     </div>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="Website/js/jquery-3.4.1.min.js"></script>
+    <script src="Website/js/popper.min.js"></script>
+    <script src="Website/js/bootstrap.min.js"></script>
+    <script src="Website/js/owl.carousel.min.js"></script>
+    <script src="Website/js/jquery.animateNumber.min.js"></script>
+    <script src="Website/js/jquery.waypoints.min.js"></script>
+    <script src="Website/js/jquery.fancybox.min.js"></script>
+    <script src="Website/js/jquery.sticky.js"></script>
+    <script src="Website/js/aos.js"></script>
+    <script src="Website/js/custom.js"></script>
 
   </body>
 
   </html>
+
+  <?php
+include 'include/footer.php';
+
+?>

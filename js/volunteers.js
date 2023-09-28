@@ -72,6 +72,7 @@ $("#employeeform").on("submit", function (event) {
   event.preventDefault();
 
 
+
   // let amount= $("#amount").val();
   // let type= $("#type").val();
   // let description= $("#description").val();
@@ -109,16 +110,20 @@ $("#employeeform").on("submit", function (event) {
       let response = data.data;
 
       if (status) {
-        swal("Good job!", response, "success");
+        displaymassage("success", response);
         btnAction = "Insert";
         loaddData();
         $("#employeeform")[0].reset();
         $("#usermodal").modal("hide");
 
+        displaymassage("success", response);
+
 
 
       } else {
-        swal("Good job!", "success", response);
+       // swal("Good job!", "success", response);
+               displaymassage("error", response);
+
 
       }
 
@@ -282,6 +287,28 @@ function Delete_volunteers_info(volunteers_id) {
 
   })
 }
+
+function displaymassage(type, message){
+    let success =   document.querySelector(".alert-success");
+    let error =   document.querySelector(".alert-danger");
+    if(type== "success"){
+      error.classList= "alert alert-danger d-none";
+       success.classList= "alert alert-success";
+       success.innerHTML= message;
+  
+       setTimeout(function(){
+        $("#usermodal").modal("hide");
+        success.classList= "alert alert-success d-none";
+        $("#usermodal")[0].reset();
+        
+  
+       },3000);
+    }else{
+      error.classList= "alert alert-danger";
+      error.innerHTML= message;
+    }
+  }
+
 
 
 $("#employeeTable").on('click', "a.update_info", function () {
