@@ -85,7 +85,7 @@
               <span class="icon-lock"></span>
               Log In
             </a>
-            <a href="register.html" class="small">
+            <a href="..//register.php" class="small">
               <span class="icon-person"></span>
               Register
             </a>
@@ -97,10 +97,10 @@
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0"><img style="border-radius: 50%; width: 50px; height: 50px;" src="../images/images.jpg" alt=""><span class="text-primary">.</span></a>
+          <a href="index.php" class="logo menu-absolute m-0"><img style="border-radius: 50%; width: 50px; height: 50px;" src="images/images.jpg" alt=""><span class="text-primary">.</span></a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
       
             <li><a href="about.html">About</a></li>
             <li class="active"><a href="contact.html">Contact</a></li>
@@ -141,25 +141,35 @@
     <div class="container">
 
       <div class="row mb-5 justify-content-center">
-        <div class="col-lg-8 mx-auto order-1" data-aos="fade-up" data-aos-delay="500">
+        <div class="col-lg-10 mx-auto order-1" data-aos="fade-up" data-aos-delay="500">
           <form class="form-box" id="employeeform">
             <input type="hidden" name="update_id" id="update_id">
             <div class="row">
 
             <div class="col-sm-12">
-                                    <div class="alert alert-success d-none" role="alert">
+            <div class="alert alert-success d-none" role="alert">
             This is a success alert—check it out!
             </div>
             <div class="alert alert-danger d-none" role="alert">
             This is a danger alert—check it out!
             </div>
-                        </div>
+            </div>
 
             
-              <div class="col-6 mb-3">
+              <div class="col-12 mb-3">
               <label for="">fullname</label>
 
                 <input type="text" class="form-control" name="fullname" id="fullname"  placeholder="Full name">
+              </div>
+
+              <div class="col-6 mb-3">
+              <label for="">email</label>
+                <input type="text" class="form-control" name="email" id="email"  placeholder="Email">
+              </div>
+
+              <div class="col-6 mb-3">
+              <label for="">password</label>
+                <input type="password" class="form-control" name="password" id="password"  placeholder="password">
               </div>
 
 
@@ -216,7 +226,7 @@
 
 
           
-              <div class="col-12 mb-3">
+              <div class="col-6 mb-3">
 
               <div class="form-group">
                 <label for="">method</label>
@@ -235,7 +245,7 @@
                 <label for="">image</label>
                 <input type="file" name="image" id="image" class="form-control" required>
                 </div>
-            
+              </div>
               </div>
 
 

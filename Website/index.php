@@ -71,7 +71,7 @@ require('../config/conn.php');
               <span class="icon-lock"></span>
               Log In
             </a>
-            <a href="register.html" class="small">
+            <a href="..//register.php" class="small">
               <span class="icon-person"></span>
               Register
             </a>
@@ -83,10 +83,10 @@ require('../config/conn.php');
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0"><img style="border-radius: 50%; width: 50px; height: 50px;" src="../images/images.jpg" alt=""><span class="text-primary">.</span></a>
+          <a href="index.php" class="logo menu-absolute m-0"><img style="border-radius: 50%; width: 50px; height: 50px;" src="../images/images.jpg" alt=""><span class="text-primary">.</span></a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
             <!-- <li class="has-children">
               <a href="#">Dropdown</a>
               <ul class="dropdown">
@@ -168,8 +168,8 @@ require('../config/conn.php');
             <img src="../<?=$row['image'];?>" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title"><?=$row['name'];?></h5>
-            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi quo ullam voluptate hic perspiciatis vero obcaecati! Tempore vero commodi exercitationem!</p>
-            <p class="card-text"><small class="text-muted"><strong>duration 2 monts</strong></small></p>
+            <p class="card-text"><?=$row['description'];?></p>
+            <p class="card-text"><small class="text-muted"><strong>duration: <?=$row['durations'];?></strong></small></p>
             <a href="applay.html" class="btn btn-primary">Applay</a>
             </div>
           </div>

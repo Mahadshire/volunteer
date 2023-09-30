@@ -67,7 +67,7 @@ include 'include/nav.php';
     <div class="col-sm-12">
       <div class="card">
       <div class="text-end">
-        <button type="button" class="btn btn-info rounded-pill m-2" data-bs-toggle="modal" data-bs-target="#usermodal">
+        <button type="button" class="btn btn-info rounded-pill m-2" data-bs-toggle="modal" data-bs-target="#volunteermodal">
        Add volunteer
          </button>
          </div>
@@ -127,7 +127,7 @@ include 'include/nav.php';
   <!-- End #main -->
 
             
-  <div class="modal fade" id="usermodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="volunteermodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -146,6 +146,21 @@ include 'include/nav.php';
                 <label for="">fullname</label>
 
                 <input type="text" name="fullname" id="fullname" class="form-control" placeholder="fullname" required>
+                </div>
+            </div>
+
+        <div class="col-sm-6">
+                <div class="form-group">
+                <label for="">Email</label>
+
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+            </div>
+        <div class="col-sm-6">
+                <div class="form-group">
+                <label for="">Password</label>
+
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
                 </div>
             </div>
 

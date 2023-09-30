@@ -56,8 +56,8 @@ function register_valunteers($conn){
     }
 
      if(count($eroor_Array) <= 0){
-         $query = "INSERT INTO `volunteers`(`volunteers_id`, `fullname`, `sex`, `phone`, `age`, `education`, `branch_id`, `image`, `method`)
-         values('$new_id','$fullname', '$sex', '$phone', '$age','$education', '$branch_id', '$save_name', '$method')";
+         $query = "INSERT INTO `volunteers`(`volunteers_id`, `fullname`, `email`, `password`, `sex`, `phone`, `age`, `education`, `branch_id`, `image`, `method`)
+         values('$new_id','$fullname', '$email',  MD5('$password'), '$sex', '$phone', '$age','$education', '$branch_id', '$save_name', '$method')";
    
        $result = $conn->query($query);
    
@@ -159,7 +159,7 @@ function update_volunteers($conn){
         }
     
          if(count($eroor_Array) <= 0){
-            $query = "UPDATE volunteers set volunteers.fullname= '$fullname',  volunteers.sex= '$sex', volunteers.phone = '$phone', volunteers.age = '$age', volunteers.education = '$education', volunteers.branch_id = '$branch_id', volunteers.method = '$method' where volunteers.volunteers_id= '$update_id'";
+            $query = "UPDATE volunteers set volunteers.fullname= '$fullname',volunteers.email = '$email', volunteers.password =  MD5('$password'), volunteers.sex= '$sex', volunteers.phone = '$phone', volunteers.age = '$age', volunteers.education = '$education', volunteers.branch_id = '$branch_id', volunteers.method = '$method' where volunteers.volunteers_id= '$update_id'";
        
            $result = $conn->query($query);
        
@@ -184,7 +184,7 @@ function update_volunteers($conn){
 
     }else{
 
-        $query = "UPDATE volunteers set  volunteers.fullname= '$fullname',  volunteers.sex= '$sex', volunteers.phone = '$phone', volunteers.age = '$age', volunteers.education = '$education', volunteers.branch_id = '$branch_id', volunteers.method = '$method' where volunteers.volunteers_id= '$update_id'";
+        $query = "UPDATE volunteers set  volunteers.fullname= '$fullname', volunteers.email = '$email', volunteers.password =  MD5('$password'), volunteers.sex= '$sex', volunteers.phone = '$phone', volunteers.age = '$age', volunteers.education = '$education', volunteers.branch_id = '$branch_id', volunteers.method = '$method' where volunteers.volunteers_id= '$update_id'";
   
       $result = $conn->query($query);
   
@@ -213,13 +213,13 @@ function Delete_volunteers_info($conn){
     extract($_POST);
     $data = array();
     $array_data = array();
-   $query ="DELETE FROM `volunteers` where volunteers_id= '$volunteers_id'";
+   $query ="DELETE FROM `volunteers` where volunteers_id  = '$volunteers_id'";
     $result = $conn->query($query);
 
 
     if($result){
      
-        unlink('../aploads/' .$id. ".png");
+        unlink('../aploads/' .$volunteers_id. ".png");
         
         $data = array("status" => true, "data" => "Deleted successfully😎");
 

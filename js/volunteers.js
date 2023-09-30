@@ -1,25 +1,6 @@
-
+loadVolunteers();
 fillebranch();
-loaddData();
-showImage();
 btnAction = "Insert";
-function showImage(){
-  let fileimage = document.querySelector("#image");
-let showInput = document.querySelector("#show");
-
-const reader = new FileReader();
-
-fileimage.addEventListener("change", (e) => {
-  const selectedFile = e.target.files[0];
-  reader.readAsDataURL(selectedFile);
-})
-
-reader.onload = e => {
-  showInput.src = e.target.result;
-}
-}
-
-
 
 
 function fillebranch() {
@@ -62,7 +43,23 @@ function fillebranch() {
 }
 
 
+function showImage(){
+  
+let fileimage = document.querySelector("#image");
+let showInput = document.querySelector("#show");
 
+const reader = new FileReader();
+
+fileimage.addEventListener("change", (e) => {
+  const selectedFile = e.target.files[0];
+  reader.readAsDataURL(selectedFile);
+})
+
+reader.onload = e => {
+  showInput.src = e.target.result;
+}
+
+}
 
 
 
@@ -70,7 +67,6 @@ function fillebranch() {
 $("#employeeform").on("submit", function (event) {
 
   event.preventDefault();
-
 
 
   // let amount= $("#amount").val();
@@ -81,18 +77,15 @@ $("#employeeform").on("submit", function (event) {
   let form_data = new FormData($("#employeeform")[0]);
   form_data.append("image", $("input[type=file]")[0].files[0]);
 
-
   if (btnAction == "Insert") {
+
     form_data.append("action", "register_valunteers");
     $("#employeeTable tr").html('');
-    loaddData();
 
 
 
-  }
-   else {
+  } else {
     form_data.append("action", "update_volunteers");
-    loaddData();  
 
   }
 
@@ -110,20 +103,16 @@ $("#employeeform").on("submit", function (event) {
       let response = data.data;
 
       if (status) {
-        displaymassage("success", response);
+        swal("Good job!", response, "success");
         btnAction = "Insert";
-        loaddData();
+        loadVolunteers();
         $("#employeeform")[0].reset();
-        $("#usermodal").modal("hide");
-
-        displaymassage("success", response);
+        $("#volunteermodal").modal("hide");
 
 
 
       } else {
-       // swal("Good job!", "success", response);
-               displaymassage("error", response);
-
+        swal("Good job!", "success", response);
 
       }
 
@@ -138,7 +127,7 @@ $("#employeeform").on("submit", function (event) {
 
 
 
-function loaddData() {
+function loadVolunteers() {
   $("#employeeTable tr").html('');
 
   let sendingData = {
@@ -200,7 +189,7 @@ function loaddData() {
 }
 
 
-function fetchuserinfo(volunteers_id) {
+function fetchvolunteersinfo(volunteers_id) {
 
   let sendingData = {
     "action": "get_volunteers_info",
@@ -224,6 +213,8 @@ function fetchuserinfo(volunteers_id) {
 
         $("#update_id").val(response['volunteers_id']);
         $("#fullname").val(response['fullname']);
+        $("#email").val(response['email'])
+        $("#password").val(response['password'])
         $("#sex").val(response['sex']);
         $("#phone").val(response['phone']);
         $("#age").val(response['age']);
@@ -231,13 +222,8 @@ function fetchuserinfo(volunteers_id) {
         $("#branch_id").val(response['branch_id']);
         $("#method").val(response['method']);
         $("#show").attr('src', `aploads/${response['image']}`);
-        $("#usermodal").modal("show");
-
-
-
-
-
-
+        $("#volunteermodal").modal("show");
+        $("#show").attr('src', `aploads/${response['image']}`);
 
       } else {
         displaymessagee("error", response);
@@ -273,7 +259,7 @@ function Delete_volunteers_info(volunteers_id) {
       if (status) {
 
         swal("Good job!", response, "success");
-        loaddData();
+        loadVolunteers();
 
 
       } else {
@@ -288,38 +274,16 @@ function Delete_volunteers_info(volunteers_id) {
   })
 }
 
-function displaymassage(type, message){
-    let success =   document.querySelector(".alert-success");
-    let error =   document.querySelector(".alert-danger");
-    if(type== "success"){
-      error.classList= "alert alert-danger d-none";
-       success.classList= "alert alert-success";
-       success.innerHTML= message;
-  
-       setTimeout(function(){
-        $("#usermodal").modal("hide");
-        success.classList= "alert alert-success d-none";
-        $("#usermodal")[0].reset();
-        
-  
-       },3000);
-    }else{
-      error.classList= "alert alert-danger";
-      error.innerHTML= message;
-    }
-  }
-
-
 
 $("#employeeTable").on('click', "a.update_info", function () {
   let id = $(this).attr("update_id");
-  fetchuserinfo(id)
+  fetchvolunteersinfo(id)
 })
 
 $("#employeeTable").on('click', "a.delete_info", function () {
-  let volunteers_id = $(this).attr("delete_id");
+  let id = $(this).attr("delete_id");
   if (confirm("Are you sure To Delete")) {
-    Delete_volunteers_info(volunteers_id)
+    Delete_volunteers_info(id)
 
   }
 
