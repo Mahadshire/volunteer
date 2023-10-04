@@ -1,11 +1,11 @@
-$("#hall_name").attr("disabled", true);
+$("#fullname").attr("disabled", true);
 
 $("#type").on("change", function () {
   if ($("#type").val() == 0) {
-    $("#hall_name").attr("disabled", true);
+    $("#fullname").attr("disabled", true);
 
   } else {
-    $("#hall_name").attr("disabled", false);
+    $("#fullname").attr("disabled", false);
   }
 })
 
@@ -75,13 +75,13 @@ $("#Booking_form").on("submit", function (event) {
   $("#booking_Table tr").html("");
 
 
-  let hall_name = $("#hall_name").val();
+  let fullname = $("#fullname").val();
 
 
 
   let sendingData = {
 
-    "hall_name": hall_name,
+    "fullname": fullname,
 
     "action": "get_booking_repo",
 

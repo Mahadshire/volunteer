@@ -7,23 +7,13 @@ include '..//config/conn.php';
 function register_wedding($conn){
     extract($_POST);
     $data = array();
-    $query = "INSERT INTO wedding (male_name,female_name) 
-    values('$male_name','$female_name')";
-
+    $query = "INSERT INTO wedding (male_name,female_name) values('$male_name','$female_name')";
     $result = $conn->query($query);
-
-
     if($result){
-
-       
             $data = array("status" => true, "data" => "successfully Registered 😂😊😒😎");
-
-
     }else{
-        $data = array("status" => false, "data"=> $conn->error);
-             
+        $data = array("status" => false, "data"=> $conn->error);      
     }
-
     echo json_encode($data);
 }
 

@@ -13,7 +13,7 @@ function get_booking_repo($conn)
     $data = array();
     $message = array();
     // read all charge report in the database and procedure
-    $query = "call booking_report('$hall_name')";
+    $query = "call booking_report('$fullname')";
 
 
     // excute the query

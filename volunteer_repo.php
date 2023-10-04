@@ -53,7 +53,7 @@ include 'include/sidebar.php';
 
 
             <div class="col-sm-5">
-              <input type="text" name="hall_name" id="hall_name" class="form-control">
+              <input type="text" name="fullname" id="fullname" class="form-control">
             </div>
 
 
@@ -65,7 +65,7 @@ include 'include/sidebar.php';
 
         <div class="row">
           <div class="table-responsive" id="printt_Area">
-            <img width="100%" ; height="300px" src="payrol2.jfif" class="mb-3">
+           <!-- <img width="100%" ; height="300px" src="payrol2.jfif" class="mb-3"> -->
 
             <table class="table" id="booking_Table">
               <thead>

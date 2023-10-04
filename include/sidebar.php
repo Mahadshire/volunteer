@@ -141,27 +141,11 @@
       <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         
       
-          <a href="booking_repo.php">
-            <i class="bi bi-circle"></i><span>booking_rport</span>
+          <a href="volunteer_repo.php">
+            <i class="bi bi-circle"></i><span>volunteer_report</span>
           </a>
         </li>
-          <a href="employe_report.php">
-            <i class="bi bi-circle"></i><span>employee_rprt</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="payment__statement.php">
-            <i class="bi bi-circle"></i><span>customer_statement</span>
-          </a>
-        </li>
-
-    
-
      
-         
-
-
     <!-- End  -->
 
     <!-- <li class="nav-item">
