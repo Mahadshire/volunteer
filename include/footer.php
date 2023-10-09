@@ -45,6 +45,8 @@
   <script src="js/forget.js"></script>
   <script src="js/applay.js"></script>
   <script src="js/Coordinators.js"></script>
+  <script src="js/login2.js"></script>
+
   <!-- <script src="js/reward.js"></script> -->
 
   <!-- <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>

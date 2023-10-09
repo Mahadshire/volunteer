@@ -67,9 +67,9 @@ require('../config/conn.php');
           </div>
 
           <div class="col-6 col-lg-3 text-right">
-            <a href="login.html" class="small mr-3">
+            <a href="login.php" class="small mr-3">
               <span class="icon-lock"></span>
-              Log In
+              Log 
             </a>
             <a href="..//register.php" class="small">
               <span class="icon-person"></span>
