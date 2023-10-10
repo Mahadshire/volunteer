@@ -2,6 +2,19 @@
 require('../config/conn.php');
 ?>
 
+<?php
+session_start();
+// include 'config/conn.php';
+// $id = $_SESSION['id'];
+
+if (!isset($_SESSION['username'])) {
+  header('Location:login.php');
+  
+  die();
+}
+
+?>
+
 
 <!doctype html>
 <html lang="en">
@@ -61,19 +74,31 @@ require('../config/conn.php');
         <div class="row align-items-center">
 
           <div class="col-6 col-lg-9">
-            <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a questions?</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">10 20 123 456</span></a> 
+            <a href="../login.php" class="small mr-3"><span class="icon-home-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Dashboard</span></a> 
+            <!-- <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a> -->
+
+            <!-- <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block"><?php  echo $_SESSION['username'] ?></span></a>  -->
             <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@mydomain.com</span></a> 
           </div>
 
-          <div class="col-6 col-lg-3 text-right">
-            <a href="login.php" class="small mr-3">
+          <div class="col-8 col-lg-3 text-right">
+            <a href="../login2.php" class="small mr-3">
               <span class="icon-lock"></span>
-              Log 
+              Log in
             </a>
             <a href="..//register.php" class="small">
               <span class="icon-person"></span>
               Register
+            </a>
+
+            <a href="#" class="small">
+              _welcome_
+              <?php  echo $_SESSION['username'] ?>
+            </a>
+
+            <a href="../logout2.php" class="small">
+              <span class="icon-logout"></span>
+              logout
             </a>
           </div>
 
@@ -83,7 +108,7 @@ require('../config/conn.php');
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.php" class="logo menu-absolute m-0"><img style="border-radius: 50%; width: 50px; height: 50px;" src="../images/images.jpg" alt=""><span class="text-primary">.</span></a>
+          <a href="index.php" class="logo menu-absolute m-0"><img style="border-radius: 50%; width: 50px; height: 50px;" src=" <?php  echo "../aploads/" . $_SESSION['image']?>" alt=""><span class="text-primary">.</span></a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li class="active"><a href="index.php">Home</a></li>
@@ -109,7 +134,7 @@ require('../config/conn.php');
             <li><a href="contact.html">Contact</a></li>
           </ul>
 
-          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
+          <!-- <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a> -->
 
           <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
             <span></span>

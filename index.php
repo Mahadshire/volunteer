@@ -4,7 +4,7 @@ session_start();
 // $id = $_SESSION['id'];
 
 if (!isset($_SESSION['username'])) {
-  header('Location:login.php');
+  header('Location:login2.php');
   
   die();
 }

@@ -28,7 +28,7 @@ $("#loginForm2").on("submit", function (e) {
             console.log('success');
   
   
-          window.location.href = "../payment.php";
+          window.location.href = "Website/dashboard.php";
   
         } else {
           swal("NOW!", response, "error");
